@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, FlatList } from 'react-native';
+import SearchBar from './components/SearchBar';
+import SearchResult from './components/SearchResult';
 
 const name = require ('./lib/startup-name-generator');
 
 const HomeScreen = () => {
-    console.log ('HI');
-    console.log(name('cloud run fit'));
-
     const [ keywordsString, onChangeKeywords ] = useState('');
     const [ results, setResults ] = useState([]);
 
@@ -16,33 +15,43 @@ const HomeScreen = () => {
     }
 
     return (
-        <View>
-            <Text>This is startup name generatorsss</Text>
-            <TextInput
-                autoCapitalize="none"
-                autoCorrect={false}
-                style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-                onChangeText={text => onChangeKeywords(text)}
-                placeHolder="Enter Space Separated Keywords"
-                value={keywordsString}
-                onEndEditing={() => generateStartupNames()}
+        <View style={styles.containerStyle}>
+            <Text style={styles.heading}>Enter some keywords</Text>
+            <Text style={styles.headingTwo}>Separated by space</Text>
+            <SearchBar
+                term={keywordsString}
+                onTermChange={text => onChangeKeywords(text)}
+                onTermSubmit={() => generateStartupNames()}
             />
-            <Text>Keywords - {keywordsString}</Text>
             <FlatList
                 data={results}
                 keyExtractor={(result) => {
                     return result;
                 }}
                 renderItem={({ item }) => {
-                    return <Text> {item} </Text>  
+                    return <SearchResult startupName={item} />
                 }}
                 horizontal={false}
                 numColumns={2}
+                style={styles.listStyle}
             />
         </View>
     );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    containerStyle: {
+        marginHorizontal: 15,
+        flex: 1
+    }, heading: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginTop: 10,
+    }, headingTwo: {
+
+    }, listStyle: {
+        
+    }
+});
 
 export default HomeScreen;
