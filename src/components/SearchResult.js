@@ -5,7 +5,7 @@ const SearchResult = ({startupName}) => {
     console.log ("STARTUP NAME ----- ", startupName);
     return (
         <View style={styles.nameContainer}>
-            <Text>{startupName}</Text>
+            <Text style={styles.startupName}>{startupName}</Text>
         </View>
     );
 };
@@ -15,7 +15,12 @@ const styles = StyleSheet.create({
         flex: 1,
         margin: 5,
         backgroundColor: '#ddd',
-        height: 70,
+        height: 64,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }, startupName: {
+        fontSize: 16,
+        fontWeight: 'bold'
     }
 });
 
