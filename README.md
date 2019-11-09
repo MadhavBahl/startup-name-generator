@@ -23,6 +23,12 @@ Please note that this app is just for fun, I created this to pass my free time. 
 - [ ] Style part 1: Apply basic styling to make the app look good
 - [ ] Style part 2: Add more advances animations to make the app look more good
 
+## Future Ideas
+
+- [ ] Cicking on a proposed name takes the user to another screen where the user can see availability of that domain 
+
+**To add more ideas create an issue and a PR with this README updated with your idea**
+
 ## Screenshots
 
-Will add them once I apply basic styling, the app UI is very bad currently :P
+![Startup Name Generator](./static/final.jpg)
