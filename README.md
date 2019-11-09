@@ -31,4 +31,5 @@ Please note that this app is just for fun, I created this to pass my free time. 
 
 ## Screenshots
 
-![Startup Name Generator](./static/final.jpg)
+![Startup Name Generator](https://user-images.githubusercontent.com/26179770/68524492-862fb680-02ed-11ea-9817-fc800311e252.png)
+
