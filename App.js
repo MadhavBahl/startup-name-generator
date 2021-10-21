@@ -8,11 +8,7 @@ const navigator = createStackNavigator ({
 }, {
 	initialRouteName: 'Home',
 	defaultNavigationOptions: {
-		title: 'Startup Name Generator',
-		headerStyle: {
-			backgroundColor: '#4990e2',
-		},
-		headerTintColor: '#fff',
+		header: null
 	}
 });
 
